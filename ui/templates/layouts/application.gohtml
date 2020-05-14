@@ -1,0 +1,21 @@
+{{ define "base" }}
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  {{ if .JavaScript }}<script src="{{ .JavaScript }}" defer></script>{{ end }}
+  {{ if .CSS }}<link rel="stylesheet" type="text/css" href="{{ .CSS }}">{{ end }}
+  <title>Blogborne</title>
+</head>
+<body>
+	{{ template "main" . }}
+
+  {{ if .React }}
+    <script src="{{ .React }}"></script>
+    <script src="{{ .ReactDOM }}"></script>
+    <script src="{{ .MainJS }}"></script>
+  {{ end }}
+</body>
+</html>
+{{ end }}
